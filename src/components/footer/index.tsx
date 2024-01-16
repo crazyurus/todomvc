@@ -32,6 +32,7 @@ function Footer(): JSX.Element | null {
     const href = e.currentTarget.getAttribute('href');
 
     changeStatus(href as TodoStatus);
+    history.replaceState(null, '', href || '/');
   };
 
   if (todos.length === 0) {

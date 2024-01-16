@@ -21,7 +21,7 @@ interface State {
 const useStore = create<State, [['zustand/immer', never]]>(
   immer((set, get) => ({
     status: '' as TodoStatus,
-    todos: [],
+    todos: [] as Todo[],
     visibleTodos(): Todo[] {
       const { status, todos } = get();
 
