@@ -1,10 +1,13 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 import useStore from '../../store';
+import { TodoStatus } from '../../types';
 import Item from '../item';
 
 function List(): JSX.Element {
-  const todos = useStore(state => state.visibleTodos());
+  const { status } = useParams();
+  const todos = useStore(state => state.visibleTodos((status || '') as TodoStatus));
   const toggleAll = useStore(state => state.toggleAll);
 
   return (

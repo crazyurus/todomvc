@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import React, { type MouseEvent } from 'react';
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
 
 import useStore from '../../store';
-import type { TodoStatus } from '../../types';
 
 const statusList = [
   {
@@ -20,20 +20,10 @@ const statusList = [
 ];
 
 function Footer(): JSX.Element | null {
-  const status = useStore(state => state.status);
+  const { status } = useParams();
   const todos = useStore(state => state.todos);
   const activeTodoCount = useStore(state => state.activeTodoCount());
-  const changeStatus = useStore(state => state.changeStatus);
   const removeCompletedTodo = useStore(state => state.removeCompletedTodo);
-
-  const handleChangeStatus = (e: MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-
-    const href = e.currentTarget.getAttribute('href');
-
-    changeStatus(href as TodoStatus);
-    history.replaceState(null, '', href || '/');
-  };
 
   if (todos.length === 0) {
     return null;
@@ -45,12 +35,9 @@ function Footer(): JSX.Element | null {
       <ul className="filters">
         {statusList.map(item => (
           <li key={item.value}>
-            <a
-              href={item.value}
-              className={classNames({ selected: item.value === status })}
-              onClick={handleChangeStatus}>
+            <Link to={'/' + item.value} className={classNames({ selected: item.value === status })} replace>
               {item.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
