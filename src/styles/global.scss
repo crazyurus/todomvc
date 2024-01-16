@@ -16,8 +16,11 @@
 
 .todo-list li {
   height: 65px;
-}
 
-.todo-list li label {
-  padding: 19px 15px 18px 60px;
+  label {
+    padding: 19px 15px 18px 60px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 }
