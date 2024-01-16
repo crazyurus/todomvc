@@ -19,7 +19,9 @@ function Item(props: Props): JSX.Element {
     toggleTodo(id);
   };
   const removeItem = () => {
-    removeTodo(id);
+    if (confirm(`Are you sure to delete "${title}"?`)) {
+      removeTodo(id);
+    }
   };
   const updateItem = (title: string) => {
     updateTodo(id, title);

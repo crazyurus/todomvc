@@ -10,6 +10,12 @@
   pointer-events: none;
 }
 
+.destroy,
+.toggle,
+.toggle-all {
+  cursor: pointer;
+}
+
 .clear-completed:disabled {
   display: none;
 }

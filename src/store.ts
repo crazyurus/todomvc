@@ -46,7 +46,7 @@ const useStore = create<State, [['zustand/persist', { todos: Todo[] }], ['zustan
       },
       addTodo(title: string): void {
         set(state => {
-          state.todos.push({
+          state.todos.unshift({
             id: uid(),
             title,
             completed: false
