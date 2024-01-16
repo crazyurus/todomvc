@@ -1,6 +1,6 @@
 import type { PathRouteProps } from 'react-router-dom';
 
-import Home from './pages/Home';
+import Home from './pages/home';
 
 interface Route extends PathRouteProps {
   path: string;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import NotFound from './pages/Error/404';
+import NotFound from './pages/error/404';
 import routes from './routes';
 
 function Router(): JSX.Element {
