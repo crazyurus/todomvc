@@ -1,44 +1,18 @@
 {
-  "name": "create-react-app",
+  "name": "todomvc",
   "version": "1.0.0",
   "private": true,
-  "description": "Web site created using create-react-app with craco",
+  "description": "基于 React + zustand 的 TodoMVC 实现",
   "scripts": {
-    "prepare": "husky install",
-    "start": "craco start",
+    "analyze": "cross-env ANALYZE=TRUE craco build",
     "build": "craco build",
-    "analyze": "cross-env ANALYZE=TRUE craco build"
+    "prepare": "husky install",
+    "start": "craco start"
   },
-  "dependencies": {
-    "classnames": "^2.3.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.2"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^17.4.4",
-    "@commitlint/config-conventional": "^17.4.4",
-    "@craco/craco": "^7.0.0",
-    "@craco/types": "^7.0.0",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "craco-css-modules": "^1.0.4",
-    "craco-esbuild": "^0.5.1",
-    "cross-env": "^7.0.3",
-    "eslint": "^8.35.0",
-    "eslint-config-prettier": "^8.7.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.1.2",
-    "prettier": "^2.8.4",
-    "react-scripts": "^5.0.1",
-    "sass": "^1.58.3",
-    "speed-measure-webpack-plugin": "^1.5.0",
-    "stylelint": "^15.2.0",
-    "stylelint-config-standard": "^30.0.1",
-    "stylelint-config-standard-scss": "^7.0.1",
-    "typescript": "^4.9.5",
-    "webpack-bundle-analyzer": "^4.8.0",
-    "webpack-subresource-integrity": "^5.1.0"
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx}": "eslint --fix",
+    "src/**/*": "prettier --write --ignore-unknown",
+    "src/**/*.{css,scss}": "stylelint"
   },
   "browserslist": {
     "production": [
@@ -52,11 +26,41 @@
       "last 1 safari version"
     ]
   },
-  "cracoConfig": "./config/craco.js",
-  "lint-staged": {
-    "src/**/*.{js,ts,tsx}": "eslint --fix",
-    "src/**/*": "prettier --write --ignore-unknown",
-    "src/**/*.{css,scss}": "stylelint"
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.2"
   },
-  "packageManager": "pnpm@8.1.0"
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@craco/craco": "^7.0.0",
+    "@craco/types": "^7.0.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "craco-css-modules": "^1.0.4",
+    "craco-esbuild": "^0.5.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.7.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
+    "prettier-plugin-packagejson": "^2.4.9",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.58.3",
+    "speed-measure-webpack-plugin": "^1.5.0",
+    "stylelint": "^15.2.0",
+    "stylelint-config-standard": "^30.0.1",
+    "stylelint-config-standard-scss": "^7.0.1",
+    "typescript": "^5.3.3",
+    "webpack-bundle-analyzer": "^4.8.0",
+    "webpack-subresource-integrity": "^5.1.0"
+  },
+  "packageManager": "pnpm@8.14.0",
+  "cracoConfig": "./config/craco.js"
 }
