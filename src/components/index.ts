@@ -1,2 +1,3 @@
-export { default as Logo } from './Logo';
-export { default as Link } from './Link';
+export { default as Header } from './header';
+export { default as List } from './list';
+export { default as Footer } from './footer';

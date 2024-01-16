@@ -9,6 +9,10 @@ interface Route extends PathRouteProps {
 
 const routes: Route[] = [
   {
+    path: '/:state',
+    page: Home
+  },
+  {
     path: '/',
     page: Home
   }

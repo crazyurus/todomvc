@@ -1,13 +1,23 @@
-body {
-  margin: 0;
-  font-size: 14px;
-  font-weight: normal;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans',
-    'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'todomvc-app-css';
+
+.toggle-all {
+  width: 40px;
+  height: 60px;
+  right: auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+.toggle-all-label {
+  pointer-events: none;
+}
+
+.clear-completed:disabled {
+  display: none;
+}
+
+.todo-list li {
+  height: 65px;
+}
+
+.todo-list li label {
+  padding: 19px 15px 18px 60px;
 }

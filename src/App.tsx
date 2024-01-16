@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Layout from './layouts/Basic';
 import NotFound from './pages/Error/404';
 import routes from './routes';
 
@@ -21,9 +20,7 @@ function Router(): JSX.Element {
 function App(): JSX.Element {
   return (
     <BrowserRouter>
-      <Layout>
-        <Router />
-      </Layout>
+      <Router />
     </BrowserRouter>
   );
 }
