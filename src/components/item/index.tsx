@@ -19,7 +19,7 @@ function Item(props: Props): JSX.Element {
     toggleTodo(id);
   };
   const removeItem = () => {
-    if (confirm(`Are you sure to delete "${title}"?`)) {
+    if (completed || confirm(`Are you sure to delete "${title}"?`)) {
       removeTodo(id);
     }
   };
