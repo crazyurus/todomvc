@@ -1,6 +1,6 @@
 # React & Zustand TodoMVC Example
 
-https://todomvc.crazyurus.cn
+https://todomvc.crazyurus.com
 
 ## Running
 
